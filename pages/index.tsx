@@ -24,10 +24,10 @@ const Home = ({ collections }: Props) => {
         </h1>
       </header>
       <main className="mt-10">
-        <div>
+        <div className="md:grid md:grid-cols-2  lg:grid-cols-3">
           {collections.map((collection) => (
             <Link href={`/nft/${collection.slug.current}`}>
-              <div className="mx-auto flex w-5/6 cursor-pointer flex-col items-center rounded-md border p-3 shadow-md transition duration-300 ease-in-out hover:scale-105 hover:shadow-slate-300">
+              <div className="mx-auto my-8 flex w-5/6 cursor-pointer flex-col items-center rounded-md border p-3 shadow-md transition duration-300 ease-in-out hover:scale-105 hover:shadow-slate-300">
                 <img
                   className="w-3/4 rounded-lg "
                   src={urlFor(collection.mainImage).url()}
