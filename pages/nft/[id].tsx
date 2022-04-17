@@ -21,7 +21,10 @@ const NftDropPage = ({ collection }: Props) => {
   const [totalSupply, setTotalSupply] = useState<BigNumber>()
   const [priceInEth, setPriceInEth] = useState<string>()
   const [loading, setLoading] = useState<boolean>(true)
-  const [ownedNft, setOwnedNft] = useState<object>()
+  // const [ownedNft, setOwnedNft] = useState<object>()
+  // const [ownedNftName, setOwnedNftName] = useState<string>('')
+  // const [ownedNftDesc, setOwnedNftDesc] = useState<string>('')
+  // const [ownedNftImg, setOwnedNftImg] = useState<string>('')
   const [closeModal, setCloseModal] = useState<boolean>(true)
   const nftDrop = useNFTDrop(collection.address)
 
@@ -80,8 +83,11 @@ const NftDropPage = ({ collection }: Props) => {
           duration: 5000,
         })
 
-        console.log(claimedNft)
-        setOwnedNft(claimedNft?.metadata)
+        // setOwnedNft(claimedNft)
+
+        // setOwnedNftName(claimedNft?.metadata?.name)
+        // setOwnedNftDesc(claimedNft?.metadata?.description)
+        // setOwnedNftImg(claimedNft?.metadata?.image)
       })
       .catch((err) => {
         console.log(err)
@@ -93,9 +99,9 @@ const NftDropPage = ({ collection }: Props) => {
       })
   }
 
-  const handleModal = () => {
-    setCloseModal((prev) => !prev)
-  }
+  // const handleModal = () => {
+  //   setCloseModal((prev) => !prev)
+  // }
 
   return (
     <div className="flex h-screen flex-col overflow-x-hidden lg:grid lg:grid-cols-10">
@@ -178,19 +184,19 @@ const NftDropPage = ({ collection }: Props) => {
           )}
         </button>
       </div>
-      {ownedNft && closeModal ? (
+      {/* {ownedNft && closeModal ? (
         <div className="absolute flex min-h-screen w-[100vw] flex-col items-center justify-center bg-black/60  text-white">
           <div className="mb-6 flex w-72  flex-col items-center  rounded-lg bg-gradient-to-b from-fuchsia-600  to-pink-600 p-3 text-2xl font-medium shadow-md shadow-white">
             <p>You Claimed!</p>
-            <img src={ownedNft?.image} alt="" className="my-4" />
-            <p>{ownedNft?.name}</p>
-            <p>{ownedNft?.description}</p>
+            <img src={ownedNftImg} alt="" className="my-4" />
+            <p>{ownedNftName}</p>
+            <p>{ownedNftDesc}</p>
           </div>
           <button onClick={handleModal} className="rounded-md bg-black p-2">
             close
           </button>
         </div>
-      ) : null}
+      ) : null} */}
     </div>
   )
 }
