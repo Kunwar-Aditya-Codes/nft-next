@@ -10,7 +10,7 @@ interface Props {
 
 const Home = ({ collections }: Props) => {
   return (
-    <div className="min-h-screen overflow-hidden bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
+    <div className="min-h-screen overflow-hidden bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white ">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -77,7 +77,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
     }`
 
   const collections = await sanityClient.fetch(query)
-  console.log(collections)
 
   return {
     props: {
